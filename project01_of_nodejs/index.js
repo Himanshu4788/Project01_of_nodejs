@@ -24,6 +24,37 @@ app.get('/profile/:username' ,function(req,res)
     // res.send("gandu");
 })
 
+
+app.get('/files/:filename' ,function(req,res)
+{
+   fs.readFile(`./files/${req.params.filename}`,"utf-8" , function(err,filedata)
+   {
+        res.render("show.ejs" , {filename:req.params.filename , filedata:filedata});    
+   })
+})
+
+
+
+
+
+
+app.get('/edit/:filename' ,function(req,res)
+{
+    res.render("edit.ejs" ,{filename:req.params.filename} );    
+})
+
+
+app.post('/edit' ,function(req,res)
+{ 
+    fs.rename(`./files/${req.body.prev}` , `./files/${req.body.new}`,function(err)
+    {
+      res.redirect(`/profile/${req.body.username}`)
+    })
+    
+       
+})
+
+
 app.post('/create' ,function(req,res)
 {
     fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt` , req.body.details,function(err){

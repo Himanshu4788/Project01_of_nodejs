@@ -27,7 +27,10 @@
                 <% files.forEach(function(val) { %>
                     <div class="task">
                         <h1> <%=val %> </h1>
-                        <a href="" style="color: rgb(36, 36, 233); font-size: 12px;">Read More.</a>
+                        <div class="extra">
+                            <a href="/files/<%= val %>" style="color: rgb(36, 36, 233); font-size: 12px;">Read More.</a>
+                            <a class="edit_file_option" href="/edit/<%= val %>" >Edit Filename</a>
+                        </div>
                     </div>
                 <% }); %>       
             <% } else { %> 

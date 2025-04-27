@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body style="color: aliceblue;" >
+    <div class=" show_container w-full min-h-screen bg-zinc-900">
+       
+            <a class="back_home" href="/profile/:username" style="color: rgba(0, 0, 255, 0.659);"> Go Back to Home</a>
+        
+   
+            <div class="filename">
+                <h1> <%=filename %> </h1>
+            </div>
+
+            <div class="content">
+                <p> <%=filedata %></p>
+            </div>
+    
+      
+    </div>
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>
